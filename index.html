@@ -4,85 +4,94 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mon Site Personnel</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #6e8efb, #a777e3);
-            color: #fff;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
             margin: 0;
             padding: 0;
-            text-align: center;
         }
         header {
-            background: rgba(0, 0, 0, 0.6);
-            padding: 40px 20px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-        }
-        h1, h2, h3 {
-            font-weight: 700;
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
         }
         nav {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 15px;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            border-radius: 10px;
-            margin: 20px auto;
-            width: fit-content;
+            background-color: #333;
+            overflow: hidden;
         }
         nav a {
-            color: #fff;
+            color: white;
+            padding: 14px 20px;
+            text-align: center;
             text-decoration: none;
-            padding: 10px 15px;
-            border-radius: 5px;
-            transition: 0.3s;
+            display: inline-block;
         }
         nav a:hover {
-            background: rgba(255, 255, 255, 0.3);
+            background-color: #ddd;
+            color: black;
         }
         section {
-            padding: 50px 20px;
-            max-width: 800px;
-            margin: auto;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 15px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            padding: 20px;
         }
         .gallery {
             display: flex;
-            justify-content: center;
+            justify-content: space-evenly;
             flex-wrap: wrap;
-            gap: 15px;
         }
         .gallery img {
-            width: 180px;
-            height: 180px;
+            width: 150px;
+            height: 150px;
+            margin: 10px;
             border-radius: 10px;
             object-fit: cover;
-            transition: transform 0.3s ease-in-out;
         }
-        .gallery img:hover {
-            transform: scale(1.1);
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
         }
         .button {
-            display: inline-block;
-            background: #ff6b6b;
+            background-color: #4CAF50;
             color: white;
             padding: 10px 20px;
             text-decoration: none;
             border-radius: 5px;
-            margin-top: 15px;
-            transition: background 0.3s;
+            margin-top: 10px;
+            display: inline-block;
         }
         .button:hover {
-            background: #ff4757;
+            background-color: #45a049;
         }
-        footer {
-            background: rgba(0, 0, 0, 0.6);
-            padding: 15px;
-            margin-top: 30px;
+
+        /* Mobile optimization */
+        @media screen and (max-width: 768px) {
+            .gallery img {
+                width: 120px;
+                height: 120px;
+            }
+            nav a {
+                padding: 10px 15px;
+            }
+        }
+        
+        @media screen and (max-width: 480px) {
+            .gallery img {
+                width: 100px;
+                height: 100px;
+            }
+            header h1 {
+                font-size: 1.5em;
+            }
+            section {
+                padding: 15px;
+            }
+            nav a {
+                padding: 8px 12px;
+            }
         }
     </style>
 </head>
@@ -98,23 +107,52 @@
         <a href="#hobbies">Mes Hobbies</a>
     </nav>
 
-    <section id="cv">
+    <section id="cv" class="cv">
         <h2>Mon CV</h2>
-        <p>Chercheur et enseignant en mathématiques avec 6 ans d'expérience.</p>
+        
+        <h3>Résumé Professionnel</h3>
+        <p>
+            Chercheur et enseignant en mathématiques avec plus de 6 ans d'expérience dans l'enseignement secondaire et un Master en Sciences Mathématiques.
+        </p>
+
+        <h3>Formation</h3>
+        <ul>
+            <li>Master en Sciences Mathématiques, AIMS Sénégal, 2019</li>
+            <li>Bachelor en Mathématiques, Université de Dakar, 2016</li>
+        </ul>
+
+        <h3>Compétences</h3>
+        <ul>
+            <li>Programmation : Python, MATLAB, R, LaTeX</li>
+            <li>Mathématiques Appliquées, Analyse de Données, Machine Learning</li>
+        </ul>
+
+        <h3>Expérience Professionnelle</h3>
+        <ul>
+            <li>Enseignant en Mathématiques, AIMS Sénégal, depuis 2019</li>
+            <li>Assistant de recherche, Projet de Machine Learning, 2018-2019</li>
+        </ul>
+
+        <h3>Publications</h3>
+        <ul>
+            <li>"Titre de la publication", Revue de Mathématiques Appliquées, 2023</li>
+        </ul>
+
         <a href="mon_cv.pdf" class="button" target="_blank">Télécharger mon CV</a>
     </section>
 
     <section id="photos">
         <h2>Mes Photos</h2>
         <div class="gallery">
-            <img src="photo1.jpeg" alt="Photo 1">
-            <img src="photo2.jpeg" alt="Photo 2">
-            <img src="photo3.jpeg" alt="Photo 3">
+            <img src="photo1.jpeg" alt="Ibrahima en compétition d'echec">
+            <img src="photo2.jpeg" alt="Ibrahima lors d'une sortie entre amis">
+            <img src="photo3.jpeg" alt="Ibrahima aux championats du Sénégal">
         </div>
     </section>
 
     <section id="hobbies">
         <h2>Mes Hobbies</h2>
+        <p>Voici mes passions :</p>
         <ul>
             <li>Lire des livres</li>
             <li>Faire du sport</li>
